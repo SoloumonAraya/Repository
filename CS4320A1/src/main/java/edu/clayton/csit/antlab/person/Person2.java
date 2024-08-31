@@ -39,6 +39,7 @@ public class Person2 {
 	  
 	  Random a = new Random(); 
 
+	if( input != null){
 	//this follows up with shuffling the character randomly	
         for (int b = random_input.length - 1; b > 0; b--) {  
             
@@ -55,7 +56,13 @@ public class Person2 {
         }
         //prints the user name after it has been shuffled
         System.out.println("The name of the user is" + random_output);
-        
+
+	}
+
+	else
+	{
+		System.out.println("input value is null");
+	}
 	  
 	  return null;
 	}  
