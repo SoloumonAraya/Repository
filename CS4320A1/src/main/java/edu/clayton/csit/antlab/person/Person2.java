@@ -1,4 +1,5 @@
 package edu.clayton.csit.antlab.person;
+import java.util.*;
 
 /**
  *  A simple class for person 2
@@ -30,9 +31,34 @@ public class Person2 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 2 put your implementation here
+	 //converts the inputted string in to charachters
+	  char[] random_input = input.toCharArray();
+	
+	  char shift;
+	  String random_output = null;
+	  
+	  Random a = new Random(); 
+
+	//this follows up with shuffling the character randomly	
+        for (int b = random_input.length - 1; b > 0; b--) {  
+            
+            int c = a.nextInt(b + 1);
+            
+            shift = random_input[b];  
+            
+            random_input[b] = random_input[c];  
+            
+            random_input[c] = shift;
+
+		//conversts the shuffled characters back to string
+            random_output = String.valueOf(shift);
+        }
+        //prints the user name after it has been shuffled
+        System.out.println("The name of the user is" + random_output);
+        
+	  
 	  return null;
-	}
+	}  
 	/**
 	 * Return a string rep of this object
 	 * that varies with an input string
@@ -44,4 +70,6 @@ public class Person2 {
 	public String toString(String input) {
 	  return name + calc(input);
 	}
+	
+	
 }
