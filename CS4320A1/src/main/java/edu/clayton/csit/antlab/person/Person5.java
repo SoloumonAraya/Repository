@@ -30,8 +30,12 @@ public class Person5 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 5 put your implementation here
-	  return null;
+	  if (input == null || input.length() <= 2) {
+	    return input;
+	  }
+	  // Rotate the string by 2 positions
+	  String rotated = input.substring(2) + input.substring(0, 2);
+	  return rotated;
 	}
 	
 	/**
@@ -45,5 +49,4 @@ public class Person5 {
 	public String toString(String input) {
 	  return name + calc(input);
 	}
-
 }
